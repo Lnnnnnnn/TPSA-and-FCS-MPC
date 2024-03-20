@@ -1,0 +1,149 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel src_name="MPCcore" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+    <args>
+      <arg id="0" access_type="w" src_name="y" src_type="ap_int&lt;8&gt;*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="y" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="1" access_type="r" src_name="Jin" src_type="ap_fixed&lt;32, 24, AP_TRN, AP_WRAP, 0&gt;" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="Jin" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="2" access_type="w" src_name="J" src_type="ap_fixed&lt;32, 24, AP_TRN, AP_WRAP, 0&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="J" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="3" access_type="w" src_name="Calc" src_type="ap_fixed&lt;16, 10, AP_TRN, AP_WRAP, 0&gt;*" src_isptr="1" src_bitwidth="16" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="Calc" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="4" access_type="w" src_name="allocationCal" src_type="ap_int&lt;8&gt;*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="allocationCal" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="5" access_type="r" src_name="xref" src_type="ap_fixed&lt;16, 10, AP_TRN, AP_WRAP, 0&gt;*" src_isptr="1" src_bitwidth="16" src_size_or_depth="6">
+        <hw hw_usage="data" hw_interface="Register" hw_name="xref_0" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="xref_1" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="xref_2" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="xref_3" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="xref_4" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="xref_5" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="6" access_type="r" src_name="x" src_type="ap_fixed&lt;16, 10, AP_TRN, AP_WRAP, 0&gt;*" src_isptr="1" src_bitwidth="16" src_size_or_depth="6">
+        <hw hw_usage="data" hw_interface="Register" hw_name="x_0" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="x_1" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="x_2" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="x_3" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="x_4" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="x_5" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="7" access_type="w" src_name="gateT" src_type="ap_int&lt;3&gt;*" src_isptr="1" src_bitwidth="8" src_size_or_depth="3">
+        <hw hw_usage="data" hw_interface="Register" hw_name="gateT_0" hw_bitwidth="3" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="gateT_1" hw_bitwidth="3" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="gateT_2" hw_bitwidth="3" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="8" access_type="w" src_name="gate" src_type="bool*" src_isptr="1" src_bitwidth="1" src_size_or_depth="6">
+        <hw hw_usage="data" hw_interface="Register" hw_name="gate_0" hw_bitwidth="1" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="gate_1" hw_bitwidth="1" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="gate_2" hw_bitwidth="1" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="gate_3" hw_bitwidth="1" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="gate_4" hw_bitwidth="1" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="gate_5" hw_bitwidth="1" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="9" access_type="" src_name="v" src_type="ap_fixed&lt;16, 10, AP_TRN, AP_WRAP, 0&gt;*" src_isptr="1" src_bitwidth="16" src_size_or_depth="2">
+        <hw hw_usage="data" hw_interface="Register" hw_name="v_0" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="v_1" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="10" access_type="r" src_name="prestate" src_type="ap_int&lt;3&gt; const *" src_isptr="1" src_bitwidth="8" src_size_or_depth="3">
+        <hw hw_usage="data" hw_interface="Register" hw_name="prestate_0" hw_bitwidth="3" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="prestate_1" hw_bitwidth="3" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="prestate_2" hw_bitwidth="3" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="11" access_type="r" src_name="Q_quad" src_type="ap_fixed&lt;4, 2, AP_TRN, AP_WRAP, 0&gt;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="Q_quad" hw_bitwidth="4" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="12" access_type="r" src_name="Q_quad_mos" src_type="ap_fixed&lt;8, 2, AP_TRN, AP_WRAP, 0&gt;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="Q_quad_mos" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="13" access_type="r" src_name="Q_switchConst_IGBT" src_type="ap_fixed&lt;10, 8, AP_TRN, AP_WRAP, 0&gt;" src_isptr="1" src_bitwidth="16" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="Q_switchConst_IGBT" hw_bitwidth="10" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="14" access_type="r" src_name="Q_switchConst_MOS" src_type="ap_fixed&lt;8, 6, AP_TRN, AP_WRAP, 0&gt;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="Q_switchConst_MOS" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="15" access_type="r" src_name="Q_currentlim" src_type="ap_int&lt;16&gt;" src_isptr="1" src_bitwidth="16" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="Q_currentlim" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+    </args>
+    <return src_type="void" src_bitwidth="0" offset="0x0">
+      <hw hw_usage="data" hw_interface="" hw_name="" hw_bitwidth="0" hw_kernel_support="true"/>
+    </return>
+  </kernel>
+</root>

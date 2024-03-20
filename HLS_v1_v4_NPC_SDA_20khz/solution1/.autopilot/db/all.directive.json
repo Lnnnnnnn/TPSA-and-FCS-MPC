@@ -1,0 +1,65 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "MPCcore",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "E:\/HLSP2\/HLS_v1_v4_NPC_SDA_20khz\/solution1\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "MPCcore"
+              }]
+          }
+        },
+        {
+          "functionName": "MPCcore",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "E:\/HLSP2\/HLS_v1_v4_NPC_SDA_20khz\/solution1\/csynth.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "MPCcore"
+              }]
+          }
+        },
+        {
+          "functionName": "MPCcore",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "E:\/HLSP2\/HLS_v1_v4_NPC_SDA_20khz\/solution1\/csynth.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "MPCcore"
+              }]
+          }
+        },
+        {
+          "functionName": "MPCcore",
+          "label": "",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "E:\/HLSP2\/HLS_v1_v4_NPC_SDA_20khz\/solution1\/csynth.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "MPCcore"
+              }]
+          }
+        }
+      ]
+    }]}

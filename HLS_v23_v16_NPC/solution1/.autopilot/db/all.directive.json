@@ -1,0 +1,65 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "MPCcore",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "D:\/MyRespostiry\/HLS\/PHC_v23_v16_NPC\/solution1\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "MPCcore"
+              }]
+          }
+        },
+        {
+          "functionName": "MPCcore",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "D:\/MyRespostiry\/HLS\/PHC_v23_v16_NPC\/solution1\/csynth.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "MPCcore"
+              }]
+          }
+        },
+        {
+          "functionName": "MPCcore",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "D:\/MyRespostiry\/HLS\/PHC_v23_v16_NPC\/solution1\/csynth.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "MPCcore"
+              }]
+          }
+        },
+        {
+          "functionName": "MPCcore",
+          "label": "",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "D:\/MyRespostiry\/HLS\/PHC_v23_v16_NPC\/solution1\/csynth.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "MPCcore"
+              }]
+          }
+        }
+      ]
+    }]}

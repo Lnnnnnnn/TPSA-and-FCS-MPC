@@ -1,0 +1,1123 @@
+
+
+================================================================
+== Synthesis Summary Report of 'MPCcore'
+================================================================
++ General Information: 
+    * Date:           Mon Feb 12 12:36:03 2024
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+    * Project:        HLS_v1_v4_NPC_SDA_20khz
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: kintex7
+    * Target device:  xc7k410t-fbg900-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+---------+--------------+--------------+-----+
+    |               Modules               | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |         |              |              |     |
+    |               & Loops               | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |      FF      |      LUT     | URAM|
+    +-------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+---------+--------------+--------------+-----+
+    |+ MPCcore                            |     -|  0.01|        -|        -|         -|        -|     -|        no|     -|  90 (5%)|  173215 (34%)|  193297 (76%)|    -|
+    | + MPCcore_Pipeline_VITIS_LOOP_42_3  |     -|  4.54|       11|  110.000|         -|       11|     -|        no|     -|        -|      10 (~0%)|     207 (~0%)|    -|
+    |  o VITIS_LOOP_42_3                  |    II|  7.30|        9|   90.000|         3|        3|     3|       yes|     -|        -|             -|             -|    -|
+    | + MPCcore_Pipeline_VITIS_LOOP_64_4  |     -|  4.77|        8|   80.000|         -|        8|     -|        no|     -|        -|       5 (~0%)|      77 (~0%)|    -|
+    |  o VITIS_LOOP_64_4                  |     -|  7.30|        6|   60.000|         1|        1|     6|       yes|     -|        -|             -|             -|    -|
+    | o MPCcore_MainWhile                 |     -|  7.30|        -|        -|         -|        -|     -|        no|     -|        -|             -|             -|    -|
+    |  + MPCallocate_0627                 |     -|  2.62|        0|    0.000|         -|        0|     -|        no|     -|        -|             -|    1542 (~0%)|    -|
+    |  + matchFunction_0627               |     -|  0.12|        -|        -|         -|        -|     -|        no|     -|        -|   65159 (12%)|   66607 (26%)|    -|
+    |   o matchloop                       |     -|  7.30|        -|        -|         -|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_1088_3              |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  + MPCthread                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    4067 (~0%)|     6369 (2%)|    -|
+    |   + ThreadPE                        |     -|  0.72|        -|        -|         -|        -|     -|        no|     -|  4 (~0%)|    2974 (~0%)|     5410 (2%)|    -|
+    |    + ThreadPE_Pipeline_TFLOOP3      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     206 (~0%)|     509 (~0%)|    -|
+    |     o TFLOOP3                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    + ThreadPE_Pipeline_TFLOOP2      |     -|  1.85|        -|        -|         -|        -|     -|        no|     -|        -|     348 (~0%)|     645 (~0%)|    -|
+    |     o TFLOOP2                       |     -|  7.30|        -|        -|         2|        1|     -|       yes|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_38_1                |     -|  7.30|        -|        -|         1|        -|     -|        no|     -|        -|             -|             -|    -|
+    |    o VITIS_LOOP_150_1               |     -|  7.30|       36|  360.000|         4|        -|     9|        no|     -|        -|             -|             -|    -|
+    |  o VITIS_LOOP_1250_42               |     -|  7.30|       16|  160.000|         1|        -|    16|        no|     -|        -|             -|             -|    -|
+    +-------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+---------+--------------+--------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* REGISTER
++--------------------+---------+----------+
+| Interface          | Mode    | Bitwidth |
++--------------------+---------+----------+
+| Calc               | ap_none | 16       |
+| J                  | ap_none | 32       |
+| Jin                | ap_none | 32       |
+| Q_currentlim       | ap_none | 16       |
+| Q_quad             | ap_none | 4        |
+| Q_quad_mos         | ap_none | 8        |
+| Q_switchConst_IGBT | ap_none | 10       |
+| Q_switchConst_MOS  | ap_none | 8        |
+| allocationCal      | ap_none | 8        |
+| gateT_0            | ap_none | 3        |
+| gateT_1            | ap_none | 3        |
+| gateT_2            | ap_none | 3        |
+| gate_0             | ap_none | 1        |
+| gate_1             | ap_none | 1        |
+| gate_2             | ap_none | 1        |
+| gate_3             | ap_none | 1        |
+| gate_4             | ap_none | 1        |
+| gate_5             | ap_none | 1        |
+| prestate_0         | ap_none | 3        |
+| prestate_1         | ap_none | 3        |
+| prestate_2         | ap_none | 3        |
+| v_0                | ap_none | 16       |
+| v_1                | ap_none | 16       |
+| x_0                | ap_none | 16       |
+| x_1                | ap_none | 16       |
+| x_2                | ap_none | 16       |
+| x_3                | ap_none | 16       |
+| x_4                | ap_none | 16       |
+| x_5                | ap_none | 16       |
+| xref_0             | ap_none | 16       |
+| xref_1             | ap_none | 16       |
+| xref_2             | ap_none | 16       |
+| xref_3             | ap_none | 16       |
+| xref_4             | ap_none | 16       |
+| xref_5             | ap_none | 16       |
+| y                  | ap_none | 8        |
++--------------------+---------+----------+
+
+* TOP LEVEL CONTROL
++-----------+-------------+-----------------------------------+
+| Interface | Type        | Ports                             |
++-----------+-------------+-----------------------------------+
+| ap_ce     | clockenable | ap_ce                             |
+| ap_clk    | clock       | ap_clk                            |
+| ap_rst    | reset       | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs  | ap_done ap_idle ap_ready ap_start |
++-----------+-------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++--------------------+-----------+---------------------------------------+
+| Argument           | Direction | Datatype                              |
++--------------------+-----------+---------------------------------------+
+| y                  | out       | ap_int<8>*                            |
+| Jin                | in        | ap_fixed<32, 24, AP_TRN, AP_WRAP, 0>  |
+| J                  | out       | ap_fixed<32, 24, AP_TRN, AP_WRAP, 0>* |
+| Calc               | out       | ap_fixed<16, 10, AP_TRN, AP_WRAP, 0>* |
+| allocationCal      | out       | ap_int<8>*                            |
+| xref               | in        | ap_fixed<16, 10, AP_TRN, AP_WRAP, 0>* |
+| x                  | in        | ap_fixed<16, 10, AP_TRN, AP_WRAP, 0>* |
+| gateT              | out       | ap_int<3>*                            |
+| gate               | out       | bool*                                 |
+| v                  | unused    | ap_fixed<16, 10, AP_TRN, AP_WRAP, 0>* |
+| prestate           | in        | ap_int<3> const *                     |
+| Q_quad             | in        | ap_fixed<4, 2, AP_TRN, AP_WRAP, 0>    |
+| Q_quad_mos         | in        | ap_fixed<8, 2, AP_TRN, AP_WRAP, 0>    |
+| Q_switchConst_IGBT | in        | ap_fixed<10, 8, AP_TRN, AP_WRAP, 0>   |
+| Q_switchConst_MOS  | in        | ap_fixed<8, 6, AP_TRN, AP_WRAP, 0>    |
+| Q_currentlim       | in        | ap_int<16>                            |
++--------------------+-----------+---------------------------------------+
+
+* SW-to-HW Mapping
++--------------------+----------------------+---------+
+| Argument           | HW Interface         | HW Type |
++--------------------+----------------------+---------+
+| y                  | y                    | port    |
+| y                  | y_ap_vld             | port    |
+| Jin                | Jin                  | port    |
+| J                  | J                    | port    |
+| J                  | J_ap_vld             | port    |
+| Calc               | Calc                 | port    |
+| Calc               | Calc_ap_vld          | port    |
+| allocationCal      | allocationCal        | port    |
+| allocationCal      | allocationCal_ap_vld | port    |
+| xref               | xref_0               | port    |
+| xref               | xref_1               | port    |
+| xref               | xref_2               | port    |
+| xref               | xref_3               | port    |
+| xref               | xref_4               | port    |
+| xref               | xref_5               | port    |
+| x                  | x_0                  | port    |
+| x                  | x_1                  | port    |
+| x                  | x_2                  | port    |
+| x                  | x_3                  | port    |
+| x                  | x_4                  | port    |
+| x                  | x_5                  | port    |
+| gateT              | gateT_0              | port    |
+| gateT              | gateT_0_ap_vld       | port    |
+| gateT              | gateT_1              | port    |
+| gateT              | gateT_1_ap_vld       | port    |
+| gateT              | gateT_2              | port    |
+| gateT              | gateT_2_ap_vld       | port    |
+| gate               | gate_0               | port    |
+| gate               | gate_0_ap_vld        | port    |
+| gate               | gate_1               | port    |
+| gate               | gate_1_ap_vld        | port    |
+| gate               | gate_2               | port    |
+| gate               | gate_2_ap_vld        | port    |
+| gate               | gate_3               | port    |
+| gate               | gate_3_ap_vld        | port    |
+| gate               | gate_4               | port    |
+| gate               | gate_4_ap_vld        | port    |
+| gate               | gate_5               | port    |
+| gate               | gate_5_ap_vld        | port    |
+| v                  | v_0                  | port    |
+| v                  | v_1                  | port    |
+| prestate           | prestate_0           | port    |
+| prestate           | prestate_1           | port    |
+| prestate           | prestate_2           | port    |
+| Q_quad             | Q_quad               | port    |
+| Q_quad_mos         | Q_quad_mos           | port    |
+| Q_switchConst_IGBT | Q_switchConst_IGBT   | port    |
+| Q_switchConst_MOS  | Q_switchConst_MOS    | port    |
+| Q_currentlim       | Q_currentlim         | port    |
++--------------------+----------------------+---------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------------------------------------+-----+--------+--------------------------+-----+--------+---------+
+| Name                                                                   | DSP | Pragma | Variable                 | Op  | Impl   | Latency |
++------------------------------------------------------------------------+-----+--------+--------------------------+-----+--------+---------+
+| + MPCcore                                                              | 90  |        |                          |     |        |         |
+|   mul_mul_16s_6ns_22_4_1_U2128                                         | 1   |        | mul_ln1316               | mul | dsp48  | 3       |
+|   ret_V_fu_25650_p2                                                    | -   |        | ret_V                    | add | fabric | 0       |
+|   r_V_5_fu_25762_p2                                                    | -   |        | r_V_5                    | sub | fabric | 0       |
+|   ret_V_9_fu_25779_p2                                                  | -   |        | ret_V_9                  | add | fabric | 0       |
+|   FkTerm1_1_V_1_fu_25795_p2                                            | -   |        | FkTerm1_1_V_1            | sub | fabric | 0       |
+|   mul_mul_16s_6ns_22_4_1_U2129                                         | 1   |        | mul_ln1316_1             | mul | dsp48  | 3       |
+|   ret_V_10_fu_25832_p2                                                 | -   |        | ret_V_10                 | add | fabric | 0       |
+|   r_V_7_fu_26054_p2                                                    | -   |        | r_V_7                    | sub | fabric | 0       |
+|   ret_V_11_fu_26071_p2                                                 | -   |        | ret_V_11                 | add | fabric | 0       |
+|   FkTerm1_1_V_3_fu_26087_p2                                            | -   |        | FkTerm1_1_V_3            | sub | fabric | 0       |
+|   mul_16s_5ns_21_1_1_U2107                                             | 1   |        | r_V_8                    | mul | auto   | 0       |
+|   mac_muladd_16s_6ns_21s_22_4_1_U2130                                  | 1   |        | mul_ln1393               | mul | dsp48  | 3       |
+|   mac_muladd_16s_6ns_21s_22_4_1_U2130                                  | 1   |        | ret_V_12                 | add | dsp48  | 3       |
+|   r_V_9_fu_25860_p2                                                    | -   |        | r_V_9                    | add | fabric | 0       |
+|   ret_V_13_fu_25887_p2                                                 | -   |        | ret_V_13                 | add | fabric | 0       |
+|   FkTerm1_1_V_5_fu_25903_p2                                            | -   |        | FkTerm1_1_V_5            | sub | fabric | 0       |
+|   mul_16s_5ns_21_1_1_U2108                                             | 1   |        | r_V_10                   | mul | auto   | 0       |
+|   mac_muladd_16s_6ns_21s_22_4_1_U2132                                  | 1   |        | mul_ln1393_1             | mul | dsp48  | 3       |
+|   mac_muladd_16s_6ns_21s_22_4_1_U2132                                  | 1   |        | ret_V_14                 | add | dsp48  | 3       |
+|   r_V_11_fu_26105_p2                                                   | -   |        | r_V_11                   | add | fabric | 0       |
+|   ret_V_15_fu_26132_p2                                                 | -   |        | ret_V_15                 | add | fabric | 0       |
+|   FkTerm1_1_V_7_fu_26202_p2                                            | -   |        | FkTerm1_1_V_7            | sub | fabric | 0       |
+|   r_V_12_fu_25718_p2                                                   | -   |        | r_V_12                   | sub | fabric | 0       |
+|   mac_muladd_16s_6s_22ns_22_4_1_U2131                                  | 1   |        | r_V_13                   | mul | dsp48  | 3       |
+|   mac_muladd_16s_6s_22ns_22_4_1_U2131                                  | 1   |        | ret_V_16                 | add | dsp48  | 3       |
+|   FkTerm1_1_V_9_fu_26207_p2                                            | -   |        | FkTerm1_1_V_9            | sub | fabric | 0       |
+|   r_V_15_fu_26006_p2                                                   | -   |        | r_V_15                   | sub | fabric | 0       |
+|   mac_muladd_16s_6s_22ns_22_4_1_U2133                                  | 1   |        | r_V_16                   | mul | dsp48  | 3       |
+|   mac_muladd_16s_6s_22ns_22_4_1_U2133                                  | 1   |        | ret_V_18                 | add | dsp48  | 3       |
+|   FkTerm1_1_V_11_fu_26284_p2                                           | -   |        | FkTerm1_1_V_11           | sub | fabric | 0       |
+|   mul_mul_16s_10ns_22_4_1_U2134                                        | 1   |        | mul_ln1316_2             | mul | dsp48  | 3       |
+|   mac_muladd_16s_7ns_22ns_22_4_1_U2136                                 | 1   |        | mul_ln1393_2             | mul | dsp48  | 3       |
+|   mac_muladd_16s_7ns_22ns_22_4_1_U2136                                 | 1   |        | ret_V_20                 | add | dsp48  | 3       |
+|   mac_muladd_16s_8ns_22ns_22_4_1_U2140                                 | 1   |        | mul_ln1393_3             | mul | dsp48  | 3       |
+|   mac_muladd_16s_8ns_22ns_22_4_1_U2140                                 | 1   |        | ret_V_21                 | add | dsp48  | 3       |
+|   mul_mul_16s_10s_22_4_1_U2135                                         | 1   |        | mul_ln1316_3             | mul | dsp48  | 3       |
+|   mac_muladd_16s_10ns_22ns_22_4_1_U2137                                | 1   |        | mul_ln1393_4             | mul | dsp48  | 3       |
+|   mac_muladd_16s_10ns_22ns_22_4_1_U2137                                | 1   |        | ret_V_22                 | add | dsp48  | 3       |
+|   mul_mul_16s_7s_22_4_1_U2138                                          | 1   |        | mul_ln1393_5             | mul | dsp48  | 3       |
+|   ret_V_23_fu_26327_p2                                                 | -   |        | ret_V_23                 | add | fabric | 0       |
+|   mac_muladd_16s_7ns_22ns_22_4_1_U2141                                 | 1   |        | mul_ln1393_6             | mul | dsp48  | 3       |
+|   mac_muladd_16s_7ns_22ns_22_4_1_U2141                                 | 1   |        | ret_V_24                 | add | dsp48  | 3       |
+|   r_V_23_fu_26244_p2                                                   | -   |        | r_V_23                   | sub | fabric | 0       |
+|   ret_V_25_fu_26420_p2                                                 | -   |        | ret_V_25                 | add | fabric | 0       |
+|   mac_muladd_16s_11s_22ns_22_4_1_U2139                                 | 1   |        | mul_ln1393_7             | mul | dsp48  | 3       |
+|   mac_muladd_16s_11s_22ns_22_4_1_U2139                                 | 1   |        | ret_V_27                 | add | dsp48  | 3       |
+|   ret_V_28_fu_26371_p2                                                 | -   |        | ret_V_28                 | add | fabric | 0       |
+|   mac_muladd_16s_8s_22ns_22_4_1_U2142                                  | 1   |        | mul_ln1393_8             | mul | dsp48  | 3       |
+|   mac_muladd_16s_8s_22ns_22_4_1_U2142                                  | 1   |        | ret_V_29                 | add | dsp48  | 3       |
+|   ret_V_30_fu_26496_p2                                                 | -   |        | ret_V_30                 | add | fabric | 0       |
+|   mac_muladd_16s_9s_22ns_22_4_1_U2143                                  | 1   |        | mul_ln1393_9             | mul | dsp48  | 3       |
+|   mac_muladd_16s_9s_22ns_22_4_1_U2143                                  | 1   |        | ret_V_31                 | add | dsp48  | 3       |
+|   Fk_V_fu_26523_p2                                                     | -   |        | Fk_V                     | sub | fabric | 0       |
+|   ama_submuladd_16s_9s_6s_22ns_22_4_1_U2145                            | 1   |        | Fk_V_1                   | sub | dsp48  | 3       |
+|   ama_submuladd_16s_9s_6s_22ns_22_4_1_U2146                            | 1   |        | Fk_V_2                   | sub | dsp48  | 3       |
+|   mul_mul_16s_6s_22_4_1_U2144                                          | 1   |        | r_V_20                   | mul | dsp48  | 3       |
+|   ama_submuladd_16s_9s_6s_22ns_22_4_1_U2145                            | 1   |        | r_V_21                   | mul | dsp48  | 3       |
+|   ama_submuladd_16s_9s_6s_22ns_22_4_1_U2145                            | 1   |        | ret_V_32                 | add | dsp48  | 3       |
+|   ama_submuladd_16s_9s_6s_22ns_22_4_1_U2146                            | 1   |        | r_V_22                   | mul | dsp48  | 3       |
+|   ama_submuladd_16s_9s_6s_22ns_22_4_1_U2146                            | 1   |        | ret_V_33                 | add | dsp48  | 3       |
+|   mul_mul_16s_7ns_22_4_1_U2147                                         | 1   |        | mul_ln1316_4             | mul | dsp48  | 3       |
+|   mul_mul_16s_11s_22_4_1_U2148                                         | 1   |        | mul_ln1316_5             | mul | dsp48  | 3       |
+|   mac_muladd_16s_10ns_22ns_22_4_1_U2150                                | 1   |        | mul_ln1393_10            | mul | dsp48  | 3       |
+|   mac_muladd_16s_10ns_22ns_22_4_1_U2150                                | 1   |        | ret_V_34                 | add | dsp48  | 3       |
+|   mul_mul_16s_10s_22_4_1_U2149                                         | 1   |        | mul_ln1316_6             | mul | dsp48  | 3       |
+|   ret_V_35_fu_26679_p2                                                 | -   |        | ret_V_35                 | add | fabric | 0       |
+|   mac_muladd_16s_10ns_22ns_22_4_1_U2151                                | 1   |        | mul_ln1393_11            | mul | dsp48  | 3       |
+|   mac_muladd_16s_10ns_22ns_22_4_1_U2151                                | 1   |        | ret_V_36                 | add | dsp48  | 3       |
+|   round_3_fu_28922_p2                                                  | -   |        | round_3                  | add | fabric | 0       |
+|   allocationround_1_fu_32778_p2                                        | -   |        | allocationround_1        | add | fabric | 0       |
+|   add_ln886_fu_46989_p2                                                | -   |        | add_ln886                | add | fabric | 0       |
+|   working_thread_count_V_1_fu_47075_p2                                 | -   |        | working_thread_count_V_1 | add | fabric | 0       |
+|   add_ln1073_fu_47606_p2                                               | -   |        | add_ln1073               | add | fabric | 0       |
+|   add_ln1073_1_fu_47626_p2                                             | -   |        | add_ln1073_1             | add | fabric | 0       |
+|  + MPCcore_Pipeline_VITIS_LOOP_42_3                                    | 0   |        |                          |     |        |         |
+|    add_ln886_fu_173_p2                                                 | -   |        | add_ln886                | add | fabric | 0       |
+|    ret_V_8_fu_199_p2                                                   | -   |        | ret_V_8                  | sub | fabric | 0       |
+|    ret_V_4_fu_226_p2                                                   | -   |        | ret_V_4                  | add | fabric | 0       |
+|    ret_V_5_fu_236_p2                                                   | -   |        | ret_V_5                  | add | fabric | 0       |
+|    ret_V_6_fu_246_p2                                                   | -   |        | ret_V_6                  | add | fabric | 0       |
+|    ret_V_7_fu_256_p2                                                   | -   |        | ret_V_7                  | add | fabric | 0       |
+|  + MPCcore_Pipeline_VITIS_LOOP_64_4                                    | 0   |        |                          |     |        |         |
+|    add_ln886_fu_111_p2                                                 | -   |        | add_ln886                | add | fabric | 0       |
+|  + MPCallocate_0627                                                    | 0   |        |                          |     |        |         |
+|    t1_V_fu_1468_p2                                                     | -   |        | t1_V                     | add | fabric | 0       |
+|    sub_ln938_fu_1506_p2                                                | -   |        | sub_ln938                | sub | fabric | 0       |
+|    t1_V_1_fu_1544_p2                                                   | -   |        | t1_V_1                   | add | fabric | 0       |
+|    getWokerList_buffer_1_fu_1562_p2                                    | -   |        | getWokerList_buffer_1    | sub | fabric | 0       |
+|    t1_V_2_fu_1600_p2                                                   | -   |        | t1_V_2                   | add | fabric | 0       |
+|    getWokerList_buffer_3_fu_1618_p2                                    | -   |        | getWokerList_buffer_3    | sub | fabric | 0       |
+|    t1_V_3_fu_1656_p2                                                   | -   |        | t1_V_3                   | add | fabric | 0       |
+|    getWokerList_buffer_5_fu_1674_p2                                    | -   |        | getWokerList_buffer_5    | sub | fabric | 0       |
+|    t1_V_4_fu_1712_p2                                                   | -   |        | t1_V_4                   | add | fabric | 0       |
+|    getWokerList_buffer_7_fu_1730_p2                                    | -   |        | getWokerList_buffer_7    | sub | fabric | 0       |
+|    t1_V_5_fu_1768_p2                                                   | -   |        | t1_V_5                   | add | fabric | 0       |
+|    getWokerList_buffer_9_fu_1786_p2                                    | -   |        | getWokerList_buffer_9    | sub | fabric | 0       |
+|    t1_V_6_fu_1824_p2                                                   | -   |        | t1_V_6                   | add | fabric | 0       |
+|    getWokerList_buffer_11_fu_1842_p2                                   | -   |        | getWokerList_buffer_11   | sub | fabric | 0       |
+|    t1_V_7_fu_1880_p2                                                   | -   |        | t1_V_7                   | add | fabric | 0       |
+|    getWokerList_buffer_13_fu_1898_p2                                   | -   |        | getWokerList_buffer_13   | sub | fabric | 0       |
+|    t1_V_8_fu_1936_p2                                                   | -   |        | t1_V_8                   | add | fabric | 0       |
+|    getWokerList_buffer_15_fu_1954_p2                                   | -   |        | getWokerList_buffer_15   | sub | fabric | 0       |
+|    t1_V_9_fu_1992_p2                                                   | -   |        | t1_V_9                   | add | fabric | 0       |
+|    getWokerList_buffer_17_fu_2010_p2                                   | -   |        | getWokerList_buffer_17   | sub | fabric | 0       |
+|    t1_V_10_fu_2048_p2                                                  | -   |        | t1_V_10                  | add | fabric | 0       |
+|    getWokerList_buffer_19_fu_2066_p2                                   | -   |        | getWokerList_buffer_19   | sub | fabric | 0       |
+|    t1_V_11_fu_2104_p2                                                  | -   |        | t1_V_11                  | add | fabric | 0       |
+|    getWokerList_buffer_21_fu_2122_p2                                   | -   |        | getWokerList_buffer_21   | sub | fabric | 0       |
+|    t1_V_12_fu_2160_p2                                                  | -   |        | t1_V_12                  | add | fabric | 0       |
+|    getWokerList_buffer_23_fu_2178_p2                                   | -   |        | getWokerList_buffer_23   | sub | fabric | 0       |
+|    t1_V_13_fu_2216_p2                                                  | -   |        | t1_V_13                  | add | fabric | 0       |
+|    getWokerList_buffer_25_fu_2234_p2                                   | -   |        | getWokerList_buffer_25   | sub | fabric | 0       |
+|    t1_V_14_fu_2272_p2                                                  | -   |        | t1_V_14                  | add | fabric | 0       |
+|    getWokerList_buffer_27_fu_2290_p2                                   | -   |        | getWokerList_buffer_27   | sub | fabric | 0       |
+|    t1_V_15_fu_2328_p2                                                  | -   |        | t1_V_15                  | add | fabric | 0       |
+|    getWokerList_buffer_29_fu_2346_p2                                   | -   |        | getWokerList_buffer_29   | sub | fabric | 0       |
+|  + matchFunction_0627                                                  | 0   |        |                          |     |        |         |
+|    add_ln886_1_fu_243031_p2                                            | -   |        | add_ln886_1              | add | fabric | 0       |
+|    add_ln886_fu_243131_p2                                              | -   |        | add_ln886                | add | fabric | 0       |
+|    worker_pointer_V_2_fu_243137_p2                                     | -   |        | worker_pointer_V_2       | add | fabric | 0       |
+|    add_ln886_2_fu_243656_p2                                            | -   |        | add_ln886_2              | add | fabric | 0       |
+|    add_ln887_fu_243852_p2                                              | -   |        | add_ln887                | add | fabric | 0       |
+|    add_ln75_fu_243858_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|    add_ln75_1_fu_256375_p2                                             | -   |        | add_ln75_1               | add | fabric | 0       |
+|    add_ln75_17_fu_256608_p2                                            | -   |        | add_ln75_17              | add | fabric | 0       |
+|    add_ln75_16_fu_256699_p2                                            | -   |        | add_ln75_16              | add | fabric | 0       |
+|    add_ln75_15_fu_256790_p2                                            | -   |        | add_ln75_15              | add | fabric | 0       |
+|    add_ln75_14_fu_256881_p2                                            | -   |        | add_ln75_14              | add | fabric | 0       |
+|    add_ln75_13_fu_256972_p2                                            | -   |        | add_ln75_13              | add | fabric | 0       |
+|    add_ln75_12_fu_257063_p2                                            | -   |        | add_ln75_12              | add | fabric | 0       |
+|    add_ln75_11_fu_257154_p2                                            | -   |        | add_ln75_11              | add | fabric | 0       |
+|    add_ln75_10_fu_257245_p2                                            | -   |        | add_ln75_10              | add | fabric | 0       |
+|    add_ln75_9_fu_257336_p2                                             | -   |        | add_ln75_9               | add | fabric | 0       |
+|    add_ln75_8_fu_257427_p2                                             | -   |        | add_ln75_8               | add | fabric | 0       |
+|    add_ln75_7_fu_257518_p2                                             | -   |        | add_ln75_7               | add | fabric | 0       |
+|    add_ln75_6_fu_257609_p2                                             | -   |        | add_ln75_6               | add | fabric | 0       |
+|    add_ln75_5_fu_257700_p2                                             | -   |        | add_ln75_5               | add | fabric | 0       |
+|    add_ln75_4_fu_257791_p2                                             | -   |        | add_ln75_4               | add | fabric | 0       |
+|    add_ln75_3_fu_257882_p2                                             | -   |        | add_ln75_3               | add | fabric | 0       |
+|    add_ln75_2_fu_257973_p2                                             | -   |        | add_ln75_2               | add | fabric | 0       |
+|    add_ln886_3_fu_258447_p2                                            | -   |        | add_ln886_3              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_16931)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17010)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17089)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17168)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17247)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17326)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17405)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17484)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17563)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17642)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17721)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17800)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17879)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_17958)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_18037)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
+|  + MPCthread (grp_MPCthread_fu_18116)                                  | 4   |        |                          |     |        |         |
+|   + ThreadPE (grp_ThreadPE_fu_668)                                     | 4   |        |                          |     |        |         |
+|     assignmenttemp_V_fu_3132_p2                                        | -   |        | assignmenttemp_V         | add | fabric | 0       |
+|     sub_ln859_fu_3430_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|     tmp_289_fu_3442_p10                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|     add_ln859_fu_3220_p2                                               | -   |        | add_ln859                | add | fabric | 0       |
+|     add_ln886_fu_4044_p2                                               | -   |        | add_ln886                | add | fabric | 0       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | r_V_4                    | mul | dsp48  | 3       |
+|     mac_muladd_16s_16s_36s_36_4_1_U2016                                | 1   |        | ret_V                    | add | dsp48  | 3       |
+|     JCurrent_V_3_fu_4181_p2                                            | -   |        | JCurrent_V_3             | sub | fabric | 0       |
+|     mul_32s_32s_40_1_1_U2013                                           | 3   |        | r_V_1                    | mul | auto   | 0       |
+|     add_ln859_1_fu_4231_p2                                             | -   |        | add_ln859_1              | add | fabric | 0       |
+|     add_ln75_19_fu_4470_p2                                             | -   |        | add_ln75_19              | add | fabric | 0       |
+|     ret_V_1_fu_4481_p2                                                 | -   |        | ret_V_1                  | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP3 (grp_ThreadPE_Pipeline_TFLOOP3_fu_2957) | 0   |        |                          |     |        |         |
+|      ret_V_fu_806_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_942_p2                                               | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_948_p2                                                | -   |        | add_ln75                 | add | fabric | 0       |
+|    + ThreadPE_Pipeline_TFLOOP2 (grp_ThreadPE_Pipeline_TFLOOP2_fu_3018) | 0   |        |                          |     |        |         |
+|      ret_V_fu_873_p2                                                   | -   |        | ret_V                    | add | fabric | 0       |
+|      sub_ln859_fu_1059_p2                                              | -   |        | sub_ln859                | sub | fabric | 0       |
+|      add_ln75_fu_1065_p2                                               | -   |        | add_ln75                 | add | fabric | 0       |
+|      add_ln75_18_fu_1071_p2                                            | -   |        | add_ln75_18              | add | fabric | 0       |
++------------------------------------------------------------------------+-----+--------+--------------------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++-------------------+------+------+--------+---------------+---------+------+---------+
+| Name              | BRAM | URAM | Pragma | Variable      | Storage | Impl | Latency |
++-------------------+------+------+--------+---------------+---------+------+---------+
+| + MPCcore         | 0    | 0    |        |               |         |      |         |
+|   Yref_V_U        | -    | -    |        | Yref_V        | ram_t2p | auto | 1       |
+|   Xk_V_U          | -    | -    |        | Xk_V          | ram_t2p | auto | 1       |
+|   UBarUncs_V_U    | -    | -    |        | UBarUncs_V    | ram_t2p | auto | 1       |
+|   UBarUncs_V_1_U  | -    | -    |        | UBarUncs_V_1  | ram_t2p | auto | 1       |
+|   UBarUncs_V_2_U  | -    | -    |        | UBarUncs_V_2  | ram_t2p | auto | 1       |
+|   UBarUncs_V_3_U  | -    | -    |        | UBarUncs_V_3  | ram_t2p | auto | 1       |
+|   UBarUncs_V_4_U  | -    | -    |        | UBarUncs_V_4  | ram_t2p | auto | 1       |
+|   UBarUncs_V_5_U  | -    | -    |        | UBarUncs_V_5  | ram_t2p | auto | 1       |
+|   UBarUncs_V_6_U  | -    | -    |        | UBarUncs_V_6  | ram_t2p | auto | 1       |
+|   UBarUncs_V_7_U  | -    | -    |        | UBarUncs_V_7  | ram_t2p | auto | 1       |
+|   UBarUncs_V_8_U  | -    | -    |        | UBarUncs_V_8  | ram_t2p | auto | 1       |
+|   UBarUncs_V_9_U  | -    | -    |        | UBarUncs_V_9  | ram_t2p | auto | 1       |
+|   UBarUncs_V_10_U | -    | -    |        | UBarUncs_V_10 | ram_t2p | auto | 1       |
+|   UBarUncs_V_11_U | -    | -    |        | UBarUncs_V_11 | ram_t2p | auto | 1       |
+|   UBarUncs_V_12_U | -    | -    |        | UBarUncs_V_12 | ram_t2p | auto | 1       |
+|   UBarUncs_V_13_U | -    | -    |        | UBarUncs_V_13 | ram_t2p | auto | 1       |
+|   UBarUncs_V_14_U | -    | -    |        | UBarUncs_V_14 | ram_t2p | auto | 1       |
+|   UBarUncs_V_15_U | -    | -    |        | UBarUncs_V_15 | ram_t2p | auto | 1       |
+|   GATE_1_0_U      | -    | -    |        | GATE_1_0      | rom_1p  | auto | 1       |
+|   GATE_1_1_U      | -    | -    |        | GATE_1_1      | rom_1p  | auto | 1       |
+|   GATE_1_2_U      | -    | -    |        | GATE_1_2      | rom_1p  | auto | 1       |
+|   GATE_unzip_0_U  | -    | -    |        | GATE_unzip_0  | rom_1p  | auto | 1       |
+|   GATE_unzip_1_U  | -    | -    |        | GATE_unzip_1  | rom_1p  | auto | 1       |
+|   GATE_unzip_2_U  | -    | -    |        | GATE_unzip_2  | rom_1p  | auto | 1       |
+|   GATE_unzip_3_U  | -    | -    |        | GATE_unzip_3  | rom_1p  | auto | 1       |
+|   GATE_unzip_4_U  | -    | -    |        | GATE_unzip_4  | rom_1p  | auto | 1       |
+|   GATE_unzip_5_U  | -    | -    |        | GATE_unzip_5  | rom_1p  | auto | 1       |
++-------------------+------+------+--------+---------------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Ignored Pragmas
++-----------+--------------------+---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| Type      | Options            | Location                                                | Messages                                                                                                    |
++-----------+--------------------+---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| interface | port=Calc register | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:16 in mpccore, Calc | '#pragma HLS INTERFACE port=return register' is obsoleted and replaced by '#pragma HLS LATENCY min=1 max=1' |
+| interface | port=J register    | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:17 in mpccore, J    | '#pragma HLS INTERFACE port=return register' is obsoleted and replaced by '#pragma HLS LATENCY min=1 max=1' |
+| interface | port=y register    | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:18 in mpccore, y    | '#pragma HLS INTERFACE port=return register' is obsoleted and replaced by '#pragma HLS LATENCY min=1 max=1' |
++-----------+--------------------+---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+
+* Pragmas with Warnings
++-----------------+------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type            | Options                                        | Location                                                                                 | Messages                                                                                                                                                                                                                                              |
++-----------------+------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| array_partition | dim=2 type=complete variable=Yref              | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:41 in mpccore, Yref                                  | Ignored unsupported array_partition pragma on variable 'Yref'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension. |
+| array_partition | dim=2 type=complete variable=Vk                | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:54 in mpccore, Vk                                    | Ignored unsupported array_partition pragma on variable 'Vk'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.   |
+| array_partition | dim=2 type=complete variable=Xk                | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:63 in mpccore, Xk                                    | Ignored unsupported array_partition pragma on variable 'Xk'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.   |
+| resource        | variable=U_SET[0] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1019 in mpccore, U_SET[0]                            | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[1] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1020 in mpccore, U_SET[1]                            | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[2] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1021 in mpccore, U_SET[2]                            | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[3] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1022 in mpccore, U_SET[3]                            | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[4] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1023 in mpccore, U_SET[4]                            | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[5] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1024 in mpccore, U_SET[5]                            | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[0] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:727 in mpcthread, U_SET[0]                    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[1] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:728 in mpcthread, U_SET[1]                    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[2] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:729 in mpcthread, U_SET[2]                    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[3] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:730 in mpcthread, U_SET[3]                    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[4] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:731 in mpcthread, U_SET[4]                    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=U_SET[5] core=RAM_1P_BRAM             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:732 in mpcthread, U_SET[5]                    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=GATE[0] core=RAM_1P_BRAM              | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:762 in mpcthread, GATE[0]                     | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=GATE[1] core=RAM_1P_BRAM              | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:763 in mpcthread, GATE[1]                     | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=GATE[2] core=RAM_1P_BRAM              | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:764 in mpcthread, GATE[2]                     | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+| resource        | variable=getHelperList_buffer core=RAM_2P_BRAM | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:862 in mpcallocate_0627, getHelperList_buffer | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+|                 |                                                |                                                                                          | Unsuported scalar variable on pragma 'Resource/Bind_Storage', ignore it.                                                                                                                                                                              |
+| resource        | variable=getWokerList_buffer core=RAM_2P_BRAM  | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:867 in mpcallocate_0627, getWokerList_buffer  | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                                                                                                                                            |
+|                 |                                                |                                                                                          | Unsuported scalar variable on pragma 'Resource/Bind_Storage', ignore it.                                                                                                                                                                              |
++-----------------+------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------------+--------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| Type            | Options                                                | Location                                                                                    |
++-----------------+--------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:21 in mulvector3x3                                         |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:23 in mulvector3x3                                         |
+| array_partition | dim=1 type=complete variable=a                         | PHC_v1_v4_NPC_SDA_20khz/math.cpp:35 in mulvector3x3_1, a                                    |
+| array_partition | dim=2 type=complete variable=a                         | PHC_v1_v4_NPC_SDA_20khz/math.cpp:36 in mulvector3x3_1, a                                    |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:39 in mulvector3x3_1                                       |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:41 in mulvector3x3_1                                       |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:50 in mulvector5x5                                         |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:52 in mulvector5x5                                         |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:60 in mulvector5x6                                         |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:62 in mulvector5x6                                         |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:70 in mulvector5x2                                         |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:72 in mulvector5x2                                         |
+| array_partition | dim=2 type=complete variable=H                         | PHC_v1_v4_NPC_SDA_20khz/math.cpp:144 in jcalcvalue_sda, H                                   |
+| array_partition | dim=1 type=complete variable=H                         | PHC_v1_v4_NPC_SDA_20khz/math.cpp:145 in jcalcvalue_sda, H                                   |
+| pipeline        | off                                                    | PHC_v1_v4_NPC_SDA_20khz/math.cpp:151 in jcalcvalue_sda                                      |
+| pipeline        | off                                                    | PHC_v1_v4_NPC_SDA_20khz/math.cpp:225 in jcalcvalue                                          |
+| array_partition | dim=1 type=complete variable=Aterm                     | PHC_v1_v4_NPC_SDA_20khz/math.cpp:283 in statespace, Aterm                                   |
+| array_partition | dim=1 type=complete variable=Bterm                     | PHC_v1_v4_NPC_SDA_20khz/math.cpp:285 in statespace, Bterm                                   |
+| array_partition | dim=1 type=complete variable=Eterm                     | PHC_v1_v4_NPC_SDA_20khz/math.cpp:289 in statespace, Eterm                                   |
+| array_partition | dim=1 type=complete variable=Amatrix                   | PHC_v1_v4_NPC_SDA_20khz/math.cpp:296 in statespace, Amatrix                                 |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/math.cpp:333 in statespace                                          |
+| array_partition | type=complete variable=v                               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:19 in mpccore, v                                        |
+| array_partition | type=complete variable=x                               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:20 in mpccore, x                                        |
+| array_partition | type=complete variable=xref                            | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:21 in mpccore, xref                                     |
+| array_partition | type=complete variable=prestate                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:22 in mpccore, prestate                                 |
+| array_partition | dim=1 type=complete variable=gateT                     | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:25 in mpccore, gateT                                    |
+| array_partition | dim=1 type=complete variable=gate                      | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:26 in mpccore, gate                                     |
+| array_partition | dim=2 type=complete variable=xrefs                     | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:29 in mpccore, xrefs                                    |
+| array_partition | dim=1 type=complete variable=xrefs                     | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:30 in mpccore, xrefs                                    |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:32 in mpccore                                           |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:34 in mpccore                                           |
+| array_partition | dim=2 type=complete variable=UpsilonT                  | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:129 in mpccore, UpsilonT                                |
+| array_partition | dim=1 type=complete variable=UpsilonT                  | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:130 in mpccore, UpsilonT                                |
+| array_partition | dim=2 type=complete variable=Psi                       | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:244 in mpccore, Psi                                     |
+| array_partition | dim=1 type=complete variable=Psi                       | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:245 in mpccore, Psi                                     |
+| array_partition | dim=2 type=complete variable=Gamma                     | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:365 in mpccore, Gamma                                   |
+| array_partition | dim=1 type=complete variable=Gamma                     | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:366 in mpccore, Gamma                                   |
+| array_partition | dim=2 type=complete variable=lSTE                      | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:426 in mpccore, lSTE                                    |
+| array_partition | dim=1 type=complete variable=lSTE                      | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:427 in mpccore, lSTE                                    |
+| array_partition | dim=2 type=complete variable=MinusWinv                 | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:493 in mpccore, MinusWinv                               |
+| array_partition | dim=1 type=complete variable=MinusWinv                 | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:494 in mpccore, MinusWinv                               |
+| array_partition | dim=2 type=complete variable=H                         | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:562 in mpccore, H                                       |
+| array_partition | dim=1 type=complete variable=H                         | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:563 in mpccore, H                                       |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:581 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:585 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:595 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:599 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:609 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:613 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:621 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:625 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:636 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:640 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:650 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:659 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:663 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:673 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:677 in mpccore                                          |
+| array_partition | dim=1 type=complete variable=UBarUncs                  | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:687 in mpccore, UBarUncs                                |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:690 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:692 in mpccore                                          |
+| array_partition | dim=2 type=complete variable=Uks                       | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:703 in mpccore, Uks                                     |
+| array_partition | dim=1 type=complete variable=Uks                       | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:704 in mpccore, Uks                                     |
+| array_partition | dim=1 type=complete variable=Jmins                     | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:758 in mpccore, Jmins                                   |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:760 in mpccore                                          |
+| array_partition | dim=1 type=complete variable=CalcNums                  | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:767 in mpccore, CalcNums                                |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:769 in mpccore                                          |
+| array_partition | dim=1 type=complete variable=nextgates                 | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:773 in mpccore, nextgates                               |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:775 in mpccore                                          |
+| array_partition | dim=1 type=complete variable=states                    | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:782 in mpccore, states                                  |
+| array_partition | dim=2 type=complete variable=xn_currents               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:791 in mpccore, xn_currents                             |
+| array_partition | dim=1 type=complete variable=xn_currents               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:792 in mpccore, xn_currents                             |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:794 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:796 in mpccore                                          |
+| array_partition | dim=3 type=complete variable=xn_visiteds               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:802 in mpccore, xn_visiteds                             |
+| array_partition | dim=2 type=complete variable=xn_visiteds               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:803 in mpccore, xn_visiteds                             |
+| array_partition | dim=1 type=complete variable=xn_visiteds               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:804 in mpccore, xn_visiteds                             |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:806 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:808 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:814 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:816 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:818 in mpccore                                          |
+| array_partition | dim=1 type=complete variable=indexs                    | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:825 in mpccore, indexs                                  |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:827 in mpccore                                          |
+| array_partition | dim=1 type=complete variable=INIT_indexs               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:832 in mpccore, INIT_indexs                             |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:834 in mpccore                                          |
+| array_partition | dim=1 type=complete variable=branchs                   | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:844 in mpccore, branchs                                 |
+| array_partition | dim=1 type=complete variable=INIT_branchs              | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:851 in mpccore, INIT_branchs                            |
+| array_partition | dim=2 type=complete variable=locations                 | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:861 in mpccore, locations                               |
+| array_partition | dim=1 type=complete variable=locations                 | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:862 in mpccore, locations                               |
+| array_partition | dim=1 type=complete variable=J_currents                | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:875 in mpccore, J_currents                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:877 in mpccore                                          |
+| array_partition | dim=2 type=complete variable=J_visiteds                | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:883 in mpccore, J_visiteds                              |
+| array_partition | dim=1 type=complete variable=J_visiteds                | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:884 in mpccore, J_visiteds                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:886 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:888 in mpccore                                          |
+| array_partition | dim=2 type=complete variable=helpedLists               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:894 in mpccore, helpedLists                             |
+| array_partition | dim=1 type=complete variable=helpedLists               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:895 in mpccore, helpedLists                             |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:897 in mpccore                                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:899 in mpccore                                          |
+| array_partition | dim=2 type=complete variable=E                         | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:911 in mpccore, E                                       |
+| array_partition | dim=1 type=complete variable=E                         | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:912 in mpccore, E                                       |
+| array_partition | dim=1 type=complete variable=v_temp                    | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:915 in mpccore, v_temp                                  |
+| array_partition | dim=2 type=complete variable=V_SETs                    | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:925 in mpccore, V_SETs                                  |
+| array_partition | dim=1 type=complete variable=V_SETs                    | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:926 in mpccore, V_SETs                                  |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:928 in mpccore                                          |
+| array_partition | dim=1 type=complete variable=assignmentLists           | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:945 in mpccore, assignmentLists                         |
+| array_partition | dim=2 type=complete variable=GATE                      | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:975 in mpccore, GATE                                    |
+| array_partition | dim=2 type=complete variable=GATE_unzip                | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1006 in mpccore, GATE_unzip                             |
+| array_partition | dim=1 type=complete variable=U_SET                     | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1018 in mpccore, U_SET                                  |
+| array_partition | dim=1 type=complete variable=Q_quads                   | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1027 in mpccore, Q_quads                                |
+| array_partition | dim=1 type=complete variable=Q_quad_moss               | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1034 in mpccore, Q_quad_moss                            |
+| array_partition | dim=1 type=complete variable=Q_switchConst_IGBTs       | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1041 in mpccore, Q_switchConst_IGBTs                    |
+| array_partition | dim=1 type=complete variable=Q_switchConst_MOSs        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1048 in mpccore, Q_switchConst_MOSs                     |
+| array_partition | dim=1 type=complete variable=Q_currentlims             | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1055 in mpccore, Q_currentlims                          |
+| array_partition | dim=1 type=complete variable=helper_assignment_numbers | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1063 in mpccore, helper_assignment_numbers              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1065 in mpccore                                         |
+| array_partition | dim=1 type=complete variable=getHelperList             | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1149 in mpccore, getHelperList                          |
+| array_partition | dim=1 type=complete variable=getWokerList              | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1154 in mpccore, getWokerList                           |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1197 in mpccore                                         |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:1263 in mpccore                                         |
+| pipeline        | off                                                    | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:39 in threadpe                                   |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:81 in threadpe                                   |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:89 in threadpe                                   |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:181 in threadpe                                  |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:187 in threadpe                                  |
+| pipeline        | II=2                                                   | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:218 in threadpe                                  |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:240 in threadpe                                  |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:245 in threadpe                                  |
+| pipeline        | off                                                    | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:278 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:284 in mpcworkstate                              |
+| pipeline        | off                                                    | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:291 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:300 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:319 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:327 in mpcworkstate                              |
+| array_partition | dim=1 type=complete variable=u                         | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:338 in mpcworkstate, u                           |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:340 in mpcworkstate                              |
+| array_partition | dim=1 type=complete variable=previous_state            | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:345 in mpcworkstate, previous_state              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:348 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:353 in mpcworkstate                              |
+| array_partition | dim=1 type=complete variable=current_state             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:359 in mpcworkstate, current_state               |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:361 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:383 in mpcworkstate                              |
+| pipeline        | off                                                    | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:392 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:399 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:414 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:420 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:431 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:441 in mpcworkstate                              |
+| pipeline        | off                                                    | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:451 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:458 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:472 in mpcworkstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:477 in mpcworkstate                              |
+| pipeline        | off                                                    | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:506 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:512 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:524 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:542 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:550 in mpchelpstate                              |
+| array_partition | dim=1 type=complete variable=u                         | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:562 in mpchelpstate, u                           |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:564 in mpchelpstate                              |
+| array_partition | dim=1 type=complete variable=previous_state            | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:569 in mpchelpstate, previous_state              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:572 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:577 in mpchelpstate                              |
+| array_partition | dim=1 type=complete variable=current_state             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:583 in mpchelpstate, current_state               |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:585 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:607 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:622 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:636 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:641 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:652 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:662 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:678 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:691 in mpchelpstate                              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:696 in mpchelpstate                              |
+| array_partition | dim=1 type=complete variable=U_SET                     | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:726 in mpcthread, U_SET                          |
+| array_partition | dim=2 type=complete variable=GATE                      | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:761 in mpcthread, GATE                           |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:838 in mpcendcondition                           |
+| array_partition | dim=1 type=complete variable=getHelperList_buffer      | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:861 in mpcallocate_0627, getHelperList_buffer    |
+| array_partition | dim=1 type=complete variable=getWokerList_buffer       | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:866 in mpcallocate_0627, getWokerList_buffer     |
+| array_partition | dim=1 type=complete variable=states_buffer             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:876 in mpcallocate_0627, states_buffer           |
+| array_partition | dim=1 type=complete variable=branchs_buffer            | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:880 in mpcallocate_0627, branchs_buffer          |
+| array_partition | dim=2 type=complete variable=helpedLists_buffer        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:884 in mpcallocate_0627, helpedLists_buffer      |
+| array_partition | dim=1 type=complete variable=helpedLists_buffer        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:885 in mpcallocate_0627, helpedLists_buffer      |
+| array_partition | dim=1 type=complete variable=indexs_buffer             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:888 in mpcallocate_0627, indexs_buffer           |
+| array_partition | dim=1 type=complete variable=assignmentLists_buffer    | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:892 in mpcallocate_0627, assignmentLists_buffer  |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:897 in mpcallocate_0627                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:902 in mpcallocate_0627                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:907 in mpcallocate_0627                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:912 in mpcallocate_0627                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:917 in mpcallocate_0627                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:920 in mpcallocate_0627                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:928 in mpcallocate_0627                          |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1019 in mpcallocate_0627                         |
+| array_partition | dim=1 type=complete variable=getHelperList_buffer      | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1046 in matchfunction_0627, getHelperList_buffer |
+| array_partition | dim=1 type=complete variable=getWokerList_buffer       | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1050 in matchfunction_0627, getWokerList_buffer  |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1060 in matchfunction_0627                       |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1064 in matchfunction_0627                       |
+| array_partition | dim=1 type=complete variable=helpnumber_buffer         | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1071 in matchfunction_0627, helpnumber_buffer    |
+| pipeline        | rewind                                                 | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1087 in matchfunction_0627                       |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1104 in matchfunction_0627                       |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1109 in matchfunction_0627                       |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1112 in matchfunction_0627                       |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1128 in matchfunction_0627                       |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1138 in matchfunction_0627                       |
+| pipeline        |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1156 in workerallocationfrequency                |
+| array_partition | dim=1 type=complete variable=u                         | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1202 in simplifycal, u                           |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1204 in simplifycal                              |
+| array_partition | dim=1 type=complete variable=previous_state            | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1210 in simplifycal, previous_state              |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1212 in simplifycal                              |
+| array_partition | dim=1 type=complete variable=current_state             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1218 in simplifycal, current_state               |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1220 in simplifycal                              |
+| array_partition | dim=1 type=complete variable=xn_currentNew             | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1226 in simplifycal, xn_currentNew               |
+| unroll          |                                                        | PHC_v1_v4_NPC_SDA_20khz/ThreadFunction.cpp:1228 in simplifycal                              |
++-----------------+--------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+

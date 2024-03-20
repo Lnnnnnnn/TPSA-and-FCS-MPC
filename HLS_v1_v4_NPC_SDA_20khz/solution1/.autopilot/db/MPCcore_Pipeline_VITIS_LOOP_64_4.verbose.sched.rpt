@@ -1,0 +1,139 @@
+
+
+================================================================
+== Vitis HLS Report for 'MPCcore_Pipeline_VITIS_LOOP_64_4'
+================================================================
+* Date:           Mon Feb 12 12:02:43 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS_v1_v4_NPC_SDA_20khz
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: kintex7
+* Target device:  xc7k410t-fbg900-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.527 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        8|        8|  80.000 ns|  80.000 ns|    8|    8|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_64_4  |        6|        6|         1|          1|          1|     6|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.52>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%i_V = alloca i32 1"   --->   Operation 4 'alloca' 'i_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%xn_currents_V_107_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %xn_currents_V_107"   --->   Operation 5 'read' 'xn_currents_V_107_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%xn_currents_V_106_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %xn_currents_V_106"   --->   Operation 6 'read' 'xn_currents_V_106_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%xn_currents_V_105_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %xn_currents_V_105"   --->   Operation 7 'read' 'xn_currents_V_105_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%xn_currents_V_104_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %xn_currents_V_104"   --->   Operation 8 'read' 'xn_currents_V_104_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%xn_currents_V_103_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %xn_currents_V_103"   --->   Operation 9 'read' 'xn_currents_V_103_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%xn_currents_V_102_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %xn_currents_V_102"   --->   Operation 10 'read' 'xn_currents_V_102_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (1.02ns)   --->   "%store_ln0 = store i3 0, i3 %i_V"   --->   Operation 11 'store' 'store_ln0' <Predicate = true> <Delay = 1.02>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc94"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%i_V_2 = load i3 %i_V"   --->   Operation 13 'load' 'i_V_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 14 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.86ns)   --->   "%icmp_ln1073 = icmp_eq  i3 %i_V_2, i3 6"   --->   Operation 15 'icmp' 'icmp_ln1073' <Predicate = true> <Delay = 0.86> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 6, i64 6, i64 6"   --->   Operation 16 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (1.16ns)   --->   "%add_ln886 = add i3 %i_V_2, i3 1"   --->   Operation 17 'add' 'add_ln886' <Predicate = true> <Delay = 1.16> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.16> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%br_ln64 = br i1 %icmp_ln1073, void %for.inc94.split, void %for.end96.exitStub" [PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:64]   --->   Operation 18 'br' 'br_ln64' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%i_V_1_cast = zext i3 %i_V_2"   --->   Operation 19 'zext' 'i_V_1_cast' <Predicate = (!icmp_ln1073)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln64 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11" [PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:64]   --->   Operation 20 'specloopname' 'specloopname_ln64' <Predicate = (!icmp_ln1073)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%Xk_V_addr = getelementptr i16 %Xk_V, i64 0, i64 %i_V_1_cast" [PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:65]   --->   Operation 21 'getelementptr' 'Xk_V_addr' <Predicate = (!icmp_ln1073)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (1.10ns)   --->   "%tmp = mux i16 @_ssdm_op_Mux.ap_auto.6i16.i3, i16 %xn_currents_V_102_read, i16 %xn_currents_V_103_read, i16 %xn_currents_V_104_read, i16 %xn_currents_V_105_read, i16 %xn_currents_V_106_read, i16 %xn_currents_V_107_read, i3 %i_V_2" [PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:65]   --->   Operation 22 'mux' 'tmp' <Predicate = (!icmp_ln1073)> <Delay = 1.10> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (1.42ns)   --->   "%store_ln65 = store i16 %tmp, i3 %Xk_V_addr" [PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:65]   --->   Operation 23 'store' 'store_ln65' <Predicate = (!icmp_ln1073)> <Delay = 1.42> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 6> <RAM>
+ST_1 : Operation 24 [1/1] (1.02ns)   --->   "%store_ln64 = store i3 %add_ln886, i3 %i_V" [PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:64]   --->   Operation 24 'store' 'store_ln64' <Predicate = (!icmp_ln1073)> <Delay = 1.02>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln64 = br void %for.inc94" [PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:64]   --->   Operation 25 'br' 'br_ln64' <Predicate = (!icmp_ln1073)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 26 'ret' 'ret_ln0' <Predicate = (icmp_ln1073)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.53ns
+The critical path consists of the following:
+	'alloca' operation ('i.V') [8]  (0 ns)
+	'load' operation ('i.V') on local variable 'i.V' [18]  (0 ns)
+	'mux' operation ('tmp', PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:65) [28]  (1.1 ns)
+	'store' operation ('store_ln65', PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:65) of variable 'tmp', PHC_v1_v4_NPC_SDA_20khz/MPCcore.cpp:65 on array 'Xk_V' [29]  (1.43 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="math.cpp" path="E:\HLSP2\PHC_v1_v4_NPC_SDA_20khz\math.cpp"/>
+    <originFiles name="ap_header.h" path="E:\HLSP2\PHC_v1_v4_NPC_SDA_20khz\ap_header.h"/>
+    <originFiles name="ThreadFunction.cpp" path="E:\HLSP2\PHC_v1_v4_NPC_SDA_20khz\ThreadFunction.cpp"/>
+    <originFiles name="MPCcore.cpp" path="E:\HLSP2\PHC_v1_v4_NPC_SDA_20khz\MPCcore.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="main.cpp" path="E:\HLSP2\PHC_v1_v4_NPC_SDA_20khz\main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

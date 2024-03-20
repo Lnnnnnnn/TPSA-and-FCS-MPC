@@ -1,0 +1,160 @@
+
+
+================================================================
+== Vitis HLS Report for 'MPCcore_Pipeline_VITIS_LOOP_42_3'
+================================================================
+* Date:           Mon Feb 12 12:28:56 2024
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS_v1_v4_NPC_SDA_20khz
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: kintex7
+* Target device:  xc7k410t-fbg900-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.763 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       11|       11|  0.110 us|  0.110 us|   11|   11|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_42_3  |        9|        9|         3|          3|          1|     3|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      95|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       -|       -|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       -|     112|    -|
+|Register         |        -|     -|      10|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|      10|     207|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |     1590|  1540|  508400|  254200|    0|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|      ~0|      ~0|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |add_ln886_fu_173_p2    |         +|   0|  0|  10|           2|           1|
+    |ret_V_4_fu_226_p2      |         +|   0|  0|  13|           5|           2|
+    |ret_V_5_fu_236_p2      |         +|   0|  0|  13|           5|           2|
+    |ret_V_6_fu_246_p2      |         +|   0|  0|  13|           5|           3|
+    |ret_V_7_fu_256_p2      |         +|   0|  0|  13|           5|           3|
+    |ret_V_8_fu_199_p2      |         -|   0|  0|  13|           5|           5|
+    |ap_condition_197       |       and|   0|  0|   6|           1|           1|
+    |icmp_ln1073_fu_167_p2  |      icmp|   0|  0|   8|           2|           2|
+    |ret_V_fu_210_p2        |        or|   0|  0|   6|           5|           1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0|  95|          35|          20|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |Yref_V_address0       |  17|          4|    5|         20|
+    |Yref_V_address1       |  17|          4|    5|         20|
+    |Yref_V_d0             |  17|          4|   16|         64|
+    |Yref_V_d1             |  17|          4|   16|         64|
+    |ap_NS_fsm             |  17|          4|    1|          4|
+    |ap_done_int           |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_V  |   9|          2|    2|          4|
+    |rhs_V_fu_60           |   9|          2|    2|          4|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 | 112|         26|   48|        182|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------+---+----+-----+-----------+
+    |       Name      | FF| LUT| Bits| Const Bits|
+    +-----------------+---+----+-----+-----------+
+    |ap_CS_fsm        |  3|   0|    3|          0|
+    |ap_done_reg      |  1|   0|    1|          0|
+    |ret_V_8_reg_296  |  4|   0|    5|          1|
+    |rhs_V_fu_60      |  2|   0|    2|          0|
+    +-----------------+---+----+-----+-----------+
+    |Total            | 10|   0|   11|          1|
+    +-----------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+----------------------------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  |           Source Object          |    C Type    |
++-----------------+-----+-----+------------+----------------------------------+--------------+
+|ap_clk           |   in|    1|  ap_ctrl_hs|  MPCcore_Pipeline_VITIS_LOOP_42_3|  return value|
+|ap_rst           |   in|    1|  ap_ctrl_hs|  MPCcore_Pipeline_VITIS_LOOP_42_3|  return value|
+|ap_start         |   in|    1|  ap_ctrl_hs|  MPCcore_Pipeline_VITIS_LOOP_42_3|  return value|
+|ap_done          |  out|    1|  ap_ctrl_hs|  MPCcore_Pipeline_VITIS_LOOP_42_3|  return value|
+|ap_idle          |  out|    1|  ap_ctrl_hs|  MPCcore_Pipeline_VITIS_LOOP_42_3|  return value|
+|ap_ready         |  out|    1|  ap_ctrl_hs|  MPCcore_Pipeline_VITIS_LOOP_42_3|  return value|
+|ap_ce            |   in|    1|  ap_ctrl_hs|  MPCcore_Pipeline_VITIS_LOOP_42_3|  return value|
+|Yref_V_address0  |  out|    5|   ap_memory|                            Yref_V|         array|
+|Yref_V_ce0       |  out|    1|   ap_memory|                            Yref_V|         array|
+|Yref_V_we0       |  out|    1|   ap_memory|                            Yref_V|         array|
+|Yref_V_d0        |  out|   16|   ap_memory|                            Yref_V|         array|
+|Yref_V_address1  |  out|    5|   ap_memory|                            Yref_V|         array|
+|Yref_V_ce1       |  out|    1|   ap_memory|                            Yref_V|         array|
+|Yref_V_we1       |  out|    1|   ap_memory|                            Yref_V|         array|
+|Yref_V_d1        |  out|   16|   ap_memory|                            Yref_V|         array|
+|xref_0_load      |   in|   16|     ap_none|                       xref_0_load|        scalar|
+|xref_1_load      |   in|   16|     ap_none|                       xref_1_load|        scalar|
+|xref_2_load      |   in|   16|     ap_none|                       xref_2_load|        scalar|
+|xref_3_load      |   in|   16|     ap_none|                       xref_3_load|        scalar|
+|xref_4_load      |   in|   16|     ap_none|                       xref_4_load|        scalar|
+|xref_5_load      |   in|   16|     ap_none|                       xref_5_load|        scalar|
++-----------------+-----+-----+------------+----------------------------------+--------------+
+

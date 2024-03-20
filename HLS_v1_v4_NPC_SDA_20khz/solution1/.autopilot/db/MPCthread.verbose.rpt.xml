@@ -1,0 +1,365 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'MPCthread'" level="0">
+<item name = "Date">Mon Feb 12 12:33:26 2024
+</item>
+<item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)</item>
+<item name = "Project">HLS_v1_v4_NPC_SDA_20khz</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">kintex7</item>
+<item name = "Target device">xc7k410t-fbg900-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.580 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_ThreadPE_fu_668">ThreadPE, ?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 28, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 4, 2974, 5410, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 931, -</column>
+<column name="Register">-, -, 1093, -, -</column>
+<specialColumn name="Available">1590, 1540, 508400, 254200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, ~0, ~0, 2, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_ThreadPE_fu_668">ThreadPE, 0, 4, 2974, 5410, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_block_state2_on_subcall_done">and, 0, 0, 6, 1, 1</column>
+<column name="ap_condition_4072">and, 0, 0, 6, 1, 1</column>
+<column name="ap_condition_4075">and, 0, 0, 6, 1, 1</column>
+<column name="icmp_ln822_fu_768_p2">icmp, 0, 0, 10, 7, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="CalcNum_0_reg_362">9, 2, 16, 32</column>
+<column name="J_current_0_reg_659">9, 2, 32, 64</column>
+<column name="J_visited_0_0_reg_479">9, 2, 32, 64</column>
+<column name="J_visited_1_0_reg_488">9, 2, 32, 64</column>
+<column name="J_visited_2_0_reg_497">9, 2, 32, 64</column>
+<column name="J_visited_3_0_reg_506">9, 2, 32, 64</column>
+<column name="J_visited_4_0_reg_515">9, 2, 32, 64</column>
+<column name="J_visited_5_0_reg_524">9, 2, 32, 64</column>
+<column name="J_visited_6_0_reg_533">9, 2, 32, 64</column>
+<column name="J_visited_7_0_reg_542">9, 2, 32, 64</column>
+<column name="J_visited_8_0_reg_551">9, 2, 32, 64</column>
+<column name="Jmin_0_reg_641">9, 2, 32, 64</column>
+<column name="ap_NS_fsm">13, 3, 1, 3</column>
+<column name="ap_phi_mux_CalcNum_0_phi_fu_365_p4">9, 2, 16, 32</column>
+<column name="ap_phi_mux_J_current_0_phi_fu_662_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_J_visited_0_0_phi_fu_482_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_J_visited_1_0_phi_fu_491_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_J_visited_2_0_phi_fu_500_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_J_visited_3_0_phi_fu_509_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_J_visited_4_0_phi_fu_518_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_J_visited_5_0_phi_fu_527_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_J_visited_6_0_phi_fu_536_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_J_visited_7_0_phi_fu_545_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_J_visited_8_0_phi_fu_554_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_Jmin_0_phi_fu_644_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_branch_0_phi_fu_392_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_helpedList_0_0_phi_fu_563_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_helpedList_1_0_phi_fu_572_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_helpedList_2_0_phi_fu_581_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_helpedList_3_0_phi_fu_590_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_helpedList_4_0_phi_fu_599_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_helpedList_5_0_phi_fu_608_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_helpedList_6_0_phi_fu_617_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_helpedList_7_0_phi_fu_626_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_helpedList_8_0_phi_fu_635_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_index_0_phi_fu_383_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_location_0_0_phi_fu_401_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_location_1_0_phi_fu_410_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_location_2_0_phi_fu_419_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_location_3_0_phi_fu_428_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_location_4_0_phi_fu_437_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_location_5_0_phi_fu_446_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_location_6_0_phi_fu_455_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_location_7_0_phi_fu_464_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_location_8_0_phi_fu_473_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_nextgate_0_phi_fu_374_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_state_0_phi_fu_653_p4">9, 2, 8, 16</column>
+<column name="ap_return_0">9, 2, 16, 32</column>
+<column name="ap_return_1">9, 2, 8, 16</column>
+<column name="ap_return_10">9, 2, 8, 16</column>
+<column name="ap_return_11">9, 2, 8, 16</column>
+<column name="ap_return_12">9, 2, 8, 16</column>
+<column name="ap_return_13">9, 2, 32, 64</column>
+<column name="ap_return_14">9, 2, 32, 64</column>
+<column name="ap_return_15">9, 2, 32, 64</column>
+<column name="ap_return_16">9, 2, 32, 64</column>
+<column name="ap_return_17">9, 2, 32, 64</column>
+<column name="ap_return_18">9, 2, 32, 64</column>
+<column name="ap_return_19">9, 2, 32, 64</column>
+<column name="ap_return_2">9, 2, 8, 16</column>
+<column name="ap_return_20">9, 2, 32, 64</column>
+<column name="ap_return_21">9, 2, 32, 64</column>
+<column name="ap_return_22">9, 2, 8, 16</column>
+<column name="ap_return_23">9, 2, 8, 16</column>
+<column name="ap_return_24">9, 2, 8, 16</column>
+<column name="ap_return_25">9, 2, 8, 16</column>
+<column name="ap_return_26">9, 2, 8, 16</column>
+<column name="ap_return_27">9, 2, 8, 16</column>
+<column name="ap_return_28">9, 2, 8, 16</column>
+<column name="ap_return_29">9, 2, 8, 16</column>
+<column name="ap_return_3">9, 2, 8, 16</column>
+<column name="ap_return_30">9, 2, 8, 16</column>
+<column name="ap_return_31">9, 2, 32, 64</column>
+<column name="ap_return_32">9, 2, 8, 16</column>
+<column name="ap_return_33">9, 2, 32, 64</column>
+<column name="ap_return_4">9, 2, 8, 16</column>
+<column name="ap_return_5">9, 2, 8, 16</column>
+<column name="ap_return_6">9, 2, 8, 16</column>
+<column name="ap_return_7">9, 2, 8, 16</column>
+<column name="ap_return_8">9, 2, 8, 16</column>
+<column name="ap_return_9">9, 2, 8, 16</column>
+<column name="branch_0_reg_389">9, 2, 8, 16</column>
+<column name="helpedList_0_0_reg_560">9, 2, 8, 16</column>
+<column name="helpedList_1_0_reg_569">9, 2, 8, 16</column>
+<column name="helpedList_2_0_reg_578">9, 2, 8, 16</column>
+<column name="helpedList_3_0_reg_587">9, 2, 8, 16</column>
+<column name="helpedList_4_0_reg_596">9, 2, 8, 16</column>
+<column name="helpedList_5_0_reg_605">9, 2, 8, 16</column>
+<column name="helpedList_6_0_reg_614">9, 2, 8, 16</column>
+<column name="helpedList_7_0_reg_623">9, 2, 8, 16</column>
+<column name="helpedList_8_0_reg_632">9, 2, 8, 16</column>
+<column name="index_0_reg_380">9, 2, 8, 16</column>
+<column name="location_0_0_reg_398">9, 2, 8, 16</column>
+<column name="location_1_0_reg_407">9, 2, 8, 16</column>
+<column name="location_2_0_reg_416">9, 2, 8, 16</column>
+<column name="location_3_0_reg_425">9, 2, 8, 16</column>
+<column name="location_4_0_reg_434">9, 2, 8, 16</column>
+<column name="location_5_0_reg_443">9, 2, 8, 16</column>
+<column name="location_6_0_reg_452">9, 2, 8, 16</column>
+<column name="location_7_0_reg_461">9, 2, 8, 16</column>
+<column name="location_8_0_reg_470">9, 2, 8, 16</column>
+<column name="nextgate_0_reg_371">9, 2, 8, 16</column>
+<column name="state_0_reg_650">9, 2, 8, 16</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="CalcNum_0_reg_362">16, 0, 16, 0</column>
+<column name="J_current_0_reg_659">32, 0, 32, 0</column>
+<column name="J_visited_0_0_reg_479">32, 0, 32, 0</column>
+<column name="J_visited_1_0_reg_488">32, 0, 32, 0</column>
+<column name="J_visited_2_0_reg_497">32, 0, 32, 0</column>
+<column name="J_visited_3_0_reg_506">32, 0, 32, 0</column>
+<column name="J_visited_4_0_reg_515">32, 0, 32, 0</column>
+<column name="J_visited_5_0_reg_524">32, 0, 32, 0</column>
+<column name="J_visited_6_0_reg_533">32, 0, 32, 0</column>
+<column name="J_visited_7_0_reg_542">32, 0, 32, 0</column>
+<column name="J_visited_8_0_reg_551">32, 0, 32, 0</column>
+<column name="Jmin_0_reg_641">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">2, 0, 2, 0</column>
+<column name="ap_return_0_preg">16, 0, 16, 0</column>
+<column name="ap_return_10_preg">8, 0, 8, 0</column>
+<column name="ap_return_11_preg">8, 0, 8, 0</column>
+<column name="ap_return_12_preg">8, 0, 8, 0</column>
+<column name="ap_return_13_preg">32, 0, 32, 0</column>
+<column name="ap_return_14_preg">32, 0, 32, 0</column>
+<column name="ap_return_15_preg">32, 0, 32, 0</column>
+<column name="ap_return_16_preg">32, 0, 32, 0</column>
+<column name="ap_return_17_preg">32, 0, 32, 0</column>
+<column name="ap_return_18_preg">32, 0, 32, 0</column>
+<column name="ap_return_19_preg">32, 0, 32, 0</column>
+<column name="ap_return_1_preg">8, 0, 8, 0</column>
+<column name="ap_return_20_preg">32, 0, 32, 0</column>
+<column name="ap_return_21_preg">32, 0, 32, 0</column>
+<column name="ap_return_22_preg">8, 0, 8, 0</column>
+<column name="ap_return_23_preg">8, 0, 8, 0</column>
+<column name="ap_return_24_preg">8, 0, 8, 0</column>
+<column name="ap_return_25_preg">8, 0, 8, 0</column>
+<column name="ap_return_26_preg">8, 0, 8, 0</column>
+<column name="ap_return_27_preg">8, 0, 8, 0</column>
+<column name="ap_return_28_preg">8, 0, 8, 0</column>
+<column name="ap_return_29_preg">8, 0, 8, 0</column>
+<column name="ap_return_2_preg">8, 0, 8, 0</column>
+<column name="ap_return_30_preg">8, 0, 8, 0</column>
+<column name="ap_return_31_preg">32, 0, 32, 0</column>
+<column name="ap_return_32_preg">8, 0, 8, 0</column>
+<column name="ap_return_33_preg">32, 0, 32, 0</column>
+<column name="ap_return_3_preg">8, 0, 8, 0</column>
+<column name="ap_return_4_preg">8, 0, 8, 0</column>
+<column name="ap_return_5_preg">8, 0, 8, 0</column>
+<column name="ap_return_6_preg">8, 0, 8, 0</column>
+<column name="ap_return_7_preg">8, 0, 8, 0</column>
+<column name="ap_return_8_preg">8, 0, 8, 0</column>
+<column name="ap_return_9_preg">8, 0, 8, 0</column>
+<column name="branch_0_reg_389">8, 0, 8, 0</column>
+<column name="empty_reg_1381">1, 0, 1, 0</column>
+<column name="grp_ThreadPE_fu_668_ap_start_reg">1, 0, 1, 0</column>
+<column name="helpedList_0_0_reg_560">8, 0, 8, 0</column>
+<column name="helpedList_1_0_reg_569">8, 0, 8, 0</column>
+<column name="helpedList_2_0_reg_578">8, 0, 8, 0</column>
+<column name="helpedList_3_0_reg_587">8, 0, 8, 0</column>
+<column name="helpedList_4_0_reg_596">8, 0, 8, 0</column>
+<column name="helpedList_5_0_reg_605">8, 0, 8, 0</column>
+<column name="helpedList_6_0_reg_614">8, 0, 8, 0</column>
+<column name="helpedList_7_0_reg_623">8, 0, 8, 0</column>
+<column name="helpedList_8_0_reg_632">8, 0, 8, 0</column>
+<column name="icmp_ln822_reg_1386">1, 0, 1, 0</column>
+<column name="index_0_reg_380">8, 0, 8, 0</column>
+<column name="location_0_0_reg_398">8, 0, 8, 0</column>
+<column name="location_1_0_reg_407">8, 0, 8, 0</column>
+<column name="location_2_0_reg_416">8, 0, 8, 0</column>
+<column name="location_3_0_reg_425">8, 0, 8, 0</column>
+<column name="location_4_0_reg_434">8, 0, 8, 0</column>
+<column name="location_5_0_reg_443">8, 0, 8, 0</column>
+<column name="location_6_0_reg_452">8, 0, 8, 0</column>
+<column name="location_7_0_reg_461">8, 0, 8, 0</column>
+<column name="location_8_0_reg_470">8, 0, 8, 0</column>
+<column name="nextgate_0_reg_371">8, 0, 8, 0</column>
+<column name="state_0_reg_650">8, 0, 8, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_0">out, 16, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_1">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_2">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_3">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_4">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_5">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_6">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_7">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_8">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_9">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_10">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_11">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_12">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_13">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_14">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_15">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_16">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_17">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_18">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_19">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_20">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_21">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_22">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_23">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_24">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_25">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_26">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_27">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_28">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_29">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_30">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_31">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_32">out, 8, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_return_33">out, 32, ap_ctrl_hs, MPCthread, return value</column>
+<column name="ap_ce">in, 1, ap_ctrl_hs, MPCthread, return value</column>
+<column name="p_read">in, 32, ap_none, p_read, scalar</column>
+<column name="p_read1">in, 16, ap_none, p_read1, scalar</column>
+<column name="p_read3">in, 8, ap_none, p_read3, scalar</column>
+<column name="p_read2">in, 8, ap_none, p_read2, scalar</column>
+<column name="p_read5">in, 8, ap_none, p_read5, scalar</column>
+<column name="INIT_index">in, 8, ap_none, INIT_index, scalar</column>
+<column name="p_read6">in, 8, ap_none, p_read6, scalar</column>
+<column name="INIT_branch">in, 8, ap_none, INIT_branch, scalar</column>
+<column name="p_read7">in, 8, ap_none, p_read7, scalar</column>
+<column name="p_read8">in, 8, ap_none, p_read8, scalar</column>
+<column name="p_read9">in, 8, ap_none, p_read9, scalar</column>
+<column name="p_read10">in, 8, ap_none, p_read10, scalar</column>
+<column name="p_read11">in, 8, ap_none, p_read11, scalar</column>
+<column name="p_read12">in, 8, ap_none, p_read12, scalar</column>
+<column name="p_read13">in, 8, ap_none, p_read13, scalar</column>
+<column name="p_read14">in, 8, ap_none, p_read14, scalar</column>
+<column name="p_read15">in, 8, ap_none, p_read15, scalar</column>
+<column name="p_read4">in, 32, ap_none, p_read4, scalar</column>
+<column name="p_read17">in, 32, ap_none, p_read17, scalar</column>
+<column name="p_read18">in, 32, ap_none, p_read18, scalar</column>
+<column name="p_read19">in, 32, ap_none, p_read19, scalar</column>
+<column name="p_read20">in, 32, ap_none, p_read20, scalar</column>
+<column name="p_read21">in, 32, ap_none, p_read21, scalar</column>
+<column name="p_read22">in, 32, ap_none, p_read22, scalar</column>
+<column name="p_read23">in, 32, ap_none, p_read23, scalar</column>
+<column name="p_read24">in, 32, ap_none, p_read24, scalar</column>
+<column name="p_read25">in, 32, ap_none, p_read25, scalar</column>
+<column name="p_read26">in, 8, ap_none, p_read26, scalar</column>
+<column name="p_read27">in, 8, ap_none, p_read27, scalar</column>
+<column name="p_read28">in, 8, ap_none, p_read28, scalar</column>
+<column name="p_read29">in, 8, ap_none, p_read29, scalar</column>
+<column name="p_read30">in, 8, ap_none, p_read30, scalar</column>
+<column name="p_read31">in, 8, ap_none, p_read31, scalar</column>
+<column name="p_read32">in, 8, ap_none, p_read32, scalar</column>
+<column name="p_read33">in, 8, ap_none, p_read33, scalar</column>
+<column name="p_read34">in, 8, ap_none, p_read34, scalar</column>
+<column name="helper_assignment_number">in, 8, ap_none, helper_assignment_number, scalar</column>
+<column name="p_read35">in, 7, ap_none, p_read35, scalar</column>
+<column name="p_read16">in, 7, ap_none, p_read16, scalar</column>
+<column name="p_read210">in, 7, ap_none, p_read210, scalar</column>
+<column name="UBarUnc_address0">out, 4, ap_memory, UBarUnc, array</column>
+<column name="UBarUnc_ce0">out, 1, ap_memory, UBarUnc, array</column>
+<column name="UBarUnc_q0">in, 16, ap_memory, UBarUnc, array</column>
+</table>
+</item>
+</section>
+</profile>
